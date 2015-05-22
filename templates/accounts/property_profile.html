@@ -1,0 +1,28 @@
+{% load cms_tags %}
+
+<div class='account_table'>
+	<section class='row'>
+		<div class='half_col col emphasis'>Primary Contact</div>
+		<div class='half_col col last'>{{ property.property_contact }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Phone Number</div>
+		<div class='half_col col last'>{{ property.property_phone }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Email Address</div>
+		<div class='half_col col last'>{{ property.property_email }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Street Address</div>
+		<div class='half_col col last'>{{ property.property_address }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>City</div>
+		<div class='half_col col last'>{{ property.property_city }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Zipcode</div>
+		<div class='half_col col last'>{{ property.property_zipcode }}</div>
+	</section>
+</div>

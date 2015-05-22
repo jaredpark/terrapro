@@ -1,0 +1,17 @@
+{% extends 'cms/base.html' %}
+
+{% load static %}
+{% load cms_tags %}
+
+{% block body_block %}
+<div class='myContainer'>
+	<div class='page_content'>
+		<h1>About Us</h1>
+		<p>Owner James Haley has worked on over 400 properties over his 30 year career in the Valley, with experience working with HOAs, commerical, industrial, and municipal projects. His crew of Supervisors, Foremen, and General Gardeners offer the most thorough and detail-oriented landscape maintenance services in Phoenix, while simple weekly reporting and service request systems enable efficient and effective communication.</p>
+		<p>All of our landscape maintenance services are overseen by trained Ornamental Horiculturalists, with years of experience and specialized knowledge. We offer full-service landscape maintenance services for the Phoenix-metro area, and all of our clients are protected with 100% satisfaction guarantees.</p>
+		<div class='page-bottom-contact'>
+			<a class='btn green' href='{% page_url 'contact' %}'>Get in touch</a>
+		</div>
+	</div>
+</div>
+{% endblock body_block %}

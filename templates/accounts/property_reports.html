@@ -1,0 +1,16 @@
+{% load cms_tags %}
+
+<div class='account_table'>
+	<table style='width:100%; max-width: 600px; margin: 0 auto;'>
+		<tr class='th_row'>
+			<th>Report Date</th>
+			<th>Report PDF</th>
+		</tr>
+		{% for report in report_list %}
+		<tr>
+			<td>{{ report.date }}</td>
+			<td><a href='{{report.document.url}}'>PDF</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>

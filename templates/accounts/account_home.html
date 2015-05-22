@@ -1,0 +1,72 @@
+{% extends "cms/base.html" %}
+{% load cms_tags %}
+{% load static %}
+
+{% block head_block %}
+<title>SurgeSite Client Portal</title>
+<meta name='description' content='A client-only portal that simplifies the website design and development process.'>
+{% endblock %}
+
+{% block css_block %}
+<link rel="stylesheet" href="{% static "accounts/css/accounts.css" %}">
+{% endblock %}
+
+{% block body_block %}
+
+<div class='account_home_wrapper'>
+	<div class='runner'>
+		<div class='container my_container'>
+			<div class='transition_bar'><div class='transition_box'></div><h1>{{profile.company}} Account Portal</h1></div>
+		</div>
+	</div>
+	<div class='account_home_contents container my_container'>
+		{% if not profile %}
+		<h5>Please <a href='{% url 'profiles_profile_detail' user.username %}'>click here</a> to view your account</h5>
+		{% else %}
+		<ul id='account-tabs' class="nav nav-pills nav-justified" role='tablist'>
+			<li role="presentation" class='active'>
+				<a href="#tab1" data-toggle='tab' aria-controls='tab1' aria-expanded='true'>Home</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab2" data-toggle='tab' aria-controls='tab2' aria-expanded='false'>Account</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab3" data-toggle='tab' aria-controls='tab3' aria-expanded='false'>Current Project</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab4" data-toggle='tab' aria-controls='tab4' aria-expanded='false'>Assets</a>
+			</li>
+			<li role="presentation">
+				<a href="#tab5" data-toggle='tab' aria-controls='tab5' aria-expanded='false'>Support</a>
+			</li>
+		</ul>
+		<div id='account-tab-content' class='tab-content'>
+			<div role='tabpanel' class='tab-pane fade in active' id='tab1' aria-labelledby='tab1-tab'>
+				<h3 style='text-align:center;'>Home</h3>
+				{% include 'myProfiles/account_profile.html' %}
+				<a class='btn blue_btn' href='{% url 'profiles_edit_profile' %}'>Edit Your Profile</a>
+			</div>
+			<div role='tabpanel' class='tab-pane fade' id='tab2' aria-labelledby='tab2-tab'>
+				<h3 style='text-align:center;'>Account</h3>
+				{% include 'myProfiles/account_details.html' %}
+			</div>
+			<div role='tabpanel' class='tab-pane fade' id='tab3' aria-labelledby='tab3-tab'>
+				<h3 style='text-align:center;'>Current Project</h3>
+				{% include 'myProfiles/current_project.html' %}
+			</div>
+			{# release in the future; a section that lists all features that a customer has onsite, with the ability #}
+			{# to request updates/upgrades to current features or request new features be added from a dropdown of options #}
+			<div role='tabpanel' class='tab-pane fade' id='tab4' aria-labelledby='tab4-tab'>
+				<h3 style='text-align:center;'>Assets</h3>
+				{% include 'myProfiles/account_assets.html' %}
+			</div>
+			<div role='tabpanel' class='tab-pane fade' id='tab5' aria-labelledby='tab5-tab'>
+				<h3 style='text-align:center;'>Support</h3>
+				{% include 'myProfiles/account_support.html' %}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}

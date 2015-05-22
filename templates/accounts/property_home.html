@@ -1,0 +1,67 @@
+{% extends "cms/base.html" %}
+{% load cms_tags %}
+{% load static %}
+
+{% block head_block %}
+<title>{{profile.org_name}} Property Portal</title>
+<meta name='description' content='A client-only portal that streamlines property management communication'>
+{% endblock %}
+
+{% block css_block %}
+<link rel="stylesheet" href="{% static "accounts/css/accounts.css" %}">
+{% endblock %}
+
+{% block body_block %}
+<div class='account_home_wrapper'>
+	{% for property in property_info %}
+	<div class='runner myContainer'>
+		<div class='transition_bar'>
+			<div class='transition_box'></div>
+			<h1>{{ property.property_name }}</h1>
+			{% if not profile %}
+			<h5>Please <a href='{% url 'profiles_profile_detail' user.username %}'>click here</a> to view your account</h5>
+			{% else %}
+			<ul id='account-tabs' class="nav nav-pills nav-justified" role='tablist'>
+				<li role="presentation" class='active'>
+					<a href="#tab1" data-toggle='tab' aria-controls='tab1' aria-expanded='true'>Property Home</a>
+				</li>
+				<li role="presentation">
+					<a href="#tab2" data-toggle='tab' aria-controls='tab2' aria-expanded='false'>Property Reports</a>
+				</li>
+				<li role="presentation">
+					<a href="#tab3" data-toggle='tab' aria-controls='tab3' aria-expanded='false'>All Properties</a>
+				</li>
+			</ul>
+			{% endif %}
+		</div>
+	</div>
+	<div class='account_home_contents myContainer'>
+		{% if not profile %}
+		<h5>Please <a href='{% url 'profiles_profile_detail' user.username %}'>click here</a> to view your account</h5>
+		{% else %}
+		<div id='account-tab-content' class='tab-content'>
+			<div role='tabpanel' class='tab-pane fade in active' id='tab1' aria-labelledby='tab1-tab'>
+				<h3 style='text-align:center;'>{{ property.property_name }} Home</h3>
+				{% include 'accounts/property_profile.html' %}
+				{% comment %}
+				<a class='btn blue_btn' href='{% url 'profiles_edit_profile' %}'>Edit Your Profile</a>
+				{% endcomment %}
+			</div>
+			<div role='tabpanel' class='tab-pane fade' id='tab2' aria-labelledby='tab2-tab'>
+				<h3 style='text-align:center;'>{{ property.property_name }} Reports</h3>
+				{% include 'accounts/property_reports.html' %}
+			</div>
+			<div role='tabpanel' class='tab-pane fade' id='tab3' aria-labelledby='tab3-tab'>
+				<h3 style='text-align:center;'>{{ profile.org_name }} Properties</h3>
+				{% include 'accounts/properties_home.html' %}
+			</div>
+		</div>
+		{% endif %}
+		<div class='account_nav'>
+			<a class='btn green first' href='{% url "profiles_profile_detail" %}'>Account Home</a>
+			<a class='btn green last' href='{% url "auth_logout" %}?next=/'>Log Out</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

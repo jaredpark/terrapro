@@ -1,0 +1,32 @@
+{% load cms_tags %}
+
+<form id='contact_form' role='form' action="." method="post">
+	{% csrf_token %}
+	<ul>
+		<li>
+			{% if contact_form.first_name.errors %}
+			<input class='error_field' id="{{ contact_form.first_name.id_for_label }}" name="first_name" type="text" placeholder="{{ first_name_placeholder }}" value = "{{ first_name_value }}" />
+			{% else %}
+			<input id="{{ contact_form.first_name.id_for_label }}" name="first_name" type="text" placeholder=" {{ first_name_placeholder }}" value = "{{ first_name_value }}"/>
+			{% endif %}
+		</li>
+		<li>
+			{% if contact_form.phone.errors %}
+			<input class='error_field' id="{{ contact_form.phone.id_for_label }}" name="phone" type="text" placeholder=" {{ phone_placeholder }}" value = "{{ phone_value }}"/>
+			{% else %}
+			<input id="{{ contact_form.phone.id_for_label }}" name="phone" type="text" placeholder=" {{ phone_placeholder }}" value = "{{ phone_value }}"/>
+			{% endif %}
+		</li>
+		<li>
+			{% if contact_form.email.errors %}
+			<input class='error_field' id="{{ contact_form.email.id_for_label }}" name="email" type="text" placeholder=" {{ email_placeholder }}" value = "{{ email_value }}"/>
+			{% else %}
+			<input id="{{ contact_form.email.id_for_label }}" name="email" type="text" placeholder=" {{ email_placeholder }}" value = "{{ email_value }}"/>
+			{% endif %}
+		</li>
+		<li>
+			<textarea id="{{ contact_form.message.id_for_label }}" name="message" placeholder=" {{ message_placeholder }}" value="default message text"></textarea>
+		</li>
+	</ul>
+    <input type="submit" name='contact' class='btn green' value="Send message">
+</form>

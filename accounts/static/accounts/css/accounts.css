@@ -1,0 +1,160 @@
+h1 {
+	font-weight: 300;
+}
+
+p {
+	line-height: 24px;
+}
+
+tr {
+	text-align: center;
+}
+
+table tr td a {
+    display:block;
+    padding: 14px 0;
+    color: #333;
+    font-weight: 300!important;
+}
+
+table tr td a:hover {
+	color: #333;
+    font-weight: 300!important;
+}
+
+table tr td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.account_nav {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.account_nav a.btn:not(.last) {
+	margin-right: 20px;
+}
+
+.runner {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.transition_bar {
+	background: white;
+	border: 1px solid #ddd;
+	padding: 0 0 10px;
+}
+
+.account_home_wrapper, .edit_profile_wrapper {
+	background: url("../images/para_diag_sm_repeat.jpg") center center repeat;
+	padding-top: 0px;
+	min-height: 500px;
+}
+
+.account_home_contents {
+	background: white;
+	border: 1px solid #ddd;
+}
+
+#account-tabs, #account-tab-content {
+	background-color: white;
+	/*border: 1px solid #ddd;*/
+	font-weight: 300;
+	/*margin-bottom: 20px;*/
+}
+
+#account-tabs li a {
+	padding: 30px 0;
+}
+
+ul#account-tabs li.active a, ul#account-tabs li a:hover {
+	background-color: white;
+	color: #333;
+}
+
+#account-tab-content {
+	padding: 0 60px;
+}
+
+#account-tab-content h3 {
+	font-size: 28px;
+	font-weight: 300;
+	color: #486885;
+}
+
+.account_table {
+	padding: 20px 0;
+}
+
+.account_table .row {
+	padding: 20px 0 20px 10px;
+	border-top: 1px solid #ddd;
+	margin-bottom:0px;
+}
+
+.account_table table tr:not(.th_row):hover {
+	background-color: #f1f2f3;
+}
+
+.account_table a:hover {
+	font-weight: 500;
+}
+
+#account-tab-content .emphasis {
+	font-weight: 700;
+	color: #717273;
+}
+
+@media (max-width: 767px) {
+
+	#account-tab-content .one_quarter_col {
+		width: 49%;
+		margin: 0 2% 0 0;
+	}
+	#account-tab-content .one_quarter_col.second, #account-tab-content .one_quarter_col.last {
+		margin: 0;
+	}
+}
+
+@media (min-width: 481px) {
+
+	.half_col {
+		width: 48%;
+		margin-right: 4%;
+	}
+	.half_col.last {
+		margin: 0;
+	}
+}
+
+.blue_btn {
+	position: relative;
+	margin: 0 auto 20px;
+	padding: 15px 0;
+	display: block;
+	width: 180px;
+	font-size: 16px;
+}
+
+.account_table .blue_btn.inline {
+	position: relative;
+	display: inline-block;
+	margin: -8px 0 0 15px;
+	padding: 0;
+	width: 100px;
+	height: 40px;
+}
+
+.delete_btn {
+  background: transparent;
+  color: red;
+  font-size: 14px;
+  font-weight: 300;
+  border:none;
+}
+
+.delete_btn:hover {
+  font-weight: 500;
+}

@@ -1,0 +1,24 @@
+{% extends 'cms/base.html' %}
+
+{% load cms_tags %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<div class='myContainer'>
+	<div class='page_content'>
+		{% if user.username %}
+		<h4 style='text-align:center'>Welcome {{ user.first_name }}! You are currently logged in.</h4>
+		<a class='btn btn-danger btn-sm' style='display:block; margin:0 auto; width:140px;' href='{% url 'profiles_profile_detail' user.username %}'>View Your Account</a>
+		{% else %}
+		<div style='margin-top:20px; padding-bottom:20px; text-align:center;'>
+			<div style='display:inline;'>Current users please sign in below.</div>
+		</div>
+		<form class='login_form' method="post" action=".">
+			{% csrf_token %}
+			{{ form|crispy }}
+			<button type="submit" class="btn green">Log In</button>
+		</form>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

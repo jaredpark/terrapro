@@ -1,0 +1,33 @@
+{% load cms_tags %}
+{% load static %}
+
+<div id='homepage_service_section'>
+	<div class='row'>
+	</div>
+	<div class='row' style='text-align:center;'>
+		<div class='col one-third-col first'>
+			<a href='{% page_url 'about' %}'>
+				<h3>About Us</h3>
+				<img src='{% static 'images/about.png' %}' alt='About Us'>
+			</a>
+			<p>Learn about why we've been trusted to care for Arizona properties for over 30 years.</p>
+			<p><a href='{% page_url 'about' %}'>Learn About Us</a></p>
+		</div>
+		<div class='col one-third-col'>
+			<a href='{% page_url 'services' %}'>
+				<h3>Experience</h3>
+				<img src='{% static 'images/clients.png' %}' alt='Our Work'>
+			</a>
+			<p>Learn about some of our current and past clients, by now we've just about done it all.</p>
+			<p><a href='{% page_url 'services' %}'>Experience Matters.</a></p>
+		</div>
+		<div class='col one-third-col last'>
+			<a href='{% url 'profiles_profile_detail' %}'>
+				<h3>Client Portal</h3>
+				<img src='{% static 'images/user.png' %}' alt='Other Pool Services'>
+			</a>
+			<p>View and download property report PDFs, request new services, make payments, and more.</p>
+			<p><a href='{% url 'profiles_profile_detail' %}'>Your Account</a></p>
+		</div>
+	</div>
+</div>

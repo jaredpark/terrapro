@@ -1,0 +1,35 @@
+{% extends 'cms/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% load cms_tags %}
+
+{% block body_block %}
+<div class='myContainer'>
+	<div class='page_content'>
+		<h1>Get In Touch Today</h1>
+		<div class='row' style='text-align: center; margin-top:15px'>
+		    <div class='col-sm-6'  style='margin-top:15px'>			
+		        <p>Now it's time to get in touch, and we're ready for you.</p>
+		        <p>Feel free to call for immediate attention, or fill out this form for a response within 24 hours.</p>
+		        <address style='text-align: center; margin: 30px 0'>
+					<p style='font-size:20px'>{{ company_name }}</h4>
+				    <p>p - {{ company_phone_text }}</p>
+				    <p>f - {{ company_fax }}</p>
+				    <p>{% include 'misc_pages/email.html' %}</p>
+				</address>
+				<div class='social_nav'>{% include 'misc_pages/social_links.html' %}</div>
+		    </div>
+		    <div class='col-sm-6'>
+				{% if contact_form %}
+					{% include 'contact/contact_form.html' %}
+				{% endif %}
+				{% if first_name %}
+					<h4>Got it {{ first_name }} - we'll be in touch within one business day.</h4>
+					<p>For now, take a look at some of our <a href='{% page_url 'services' %}'>previous work</a>.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load crispy_forms_tags %}
+{% load cms_tags %}
+
+{% if quick_contact_form %}
+<form class='quick_contact_form' role='form' action='{% url 'contact' %}' method="post">
+	{% csrf_token %}
+	{{ quick_contact_form | crispy }}
+    <input style='margin-top: 10px' type="submit" name='contact' class='btn green white' value="Send message" />
+</form>
+{% else %}
+Thanks for getting in touch
+{% endif %}

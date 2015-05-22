@@ -1,0 +1,25 @@
+{% load static %}
+{% load cms_tags %}
+{% load menu_tags %}
+
+<footer id='myFooter' class='row'>
+	<div class = 'myContainer'>
+		<div class='col one-third-col first'>
+			<a class='custom-logo' href="{% page_url 'home' %}"><img class='img-responsive' src="{% static logo_file_name %}" alt='{{company_name'></a>
+			<p><a href='tel:{{company_phone_link}}'>{{ company_phone_text }}</a></p>
+			<p>{% include 'misc_pages/email.html' %}</p>
+			<div class='social_nav'>
+				{% include 'misc_pages/social_links.html' %}
+			</div>
+		</div>
+		<div class='col one-third-col'>
+			<h3 class='footer-col-header'>Sitemap</h3>
+			<nav id='footer_nav'>
+				<ul>{% show_menu 0 100 100 100 %}</ul>
+			</nav>
+		</div>
+		<div id='footer-contact' class='col one-third-col last'>
+			{% static_placeholder 'quick_contact' %}
+		</div>
+	</div>
+</footer>

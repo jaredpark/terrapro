@@ -1,0 +1,16 @@
+{% load cms_tags %}
+
+<div class='account_table'>
+	<table style='width:100%; max-width: 600px; margin: 0 auto;'>
+		<tr class='th_row'>
+			<th>Property Name</th>
+			<th>Property Address</th>
+		</tr>
+		{% for property in property_list %}
+		<tr>
+			<td><a href='/myAccount/{{ user.username }}/{{ property.pk }}'>{{ property.property_name }}</a></td>
+			<td><a href='/myAccount/{{ user.username }}/{{ property.pk }}'>{{ property.property_address }}</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>

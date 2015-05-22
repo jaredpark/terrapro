@@ -1,0 +1,32 @@
+{% load cms_tags %}
+
+<div class='account_table'>
+	<section class='row'>
+		<div class='half_col col emphasis'>Primary Contact</div>
+		<div class='half_col col last'>{{ profile.user.first_name }} {{ profile.user.last_name }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Phone Number</div>
+		<div class='half_col col last'>{{ profile.phone }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Email Address</div>
+		<div class='half_col col last'>{{ profile.email }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Street Address</div>
+		<div class='half_col col last'>{{ profile.address }}</div>
+	</section>
+	<section class='row'>
+<!-- 		<div class='one_quarter_col col emphasis'>City</div>
+		<div class='one_quarter_col col second'>{{ profile.city }}</div>
+		<div class='one_quarter_col col emphasis'>Zipcode</div>
+		<div class='one_quarter_col col last'>{{ profile.zipcode }}</div> -->
+		<div class='half_col col emphasis'>City</div>
+		<div class='half_col col last'>{{ profile.city }}</div>
+	</section>
+	<section class='row'>
+		<div class='half_col col emphasis'>Zipcode</div>
+		<div class='half_col col last'>{{ profile.zipcode }}</div>
+	</section>
+</div>

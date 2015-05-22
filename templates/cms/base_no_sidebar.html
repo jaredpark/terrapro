@@ -1,0 +1,17 @@
+{% extends 'cms/base.html' %}
+
+{% load static %}
+{% load cms_tags %}
+
+{% block body_block %}
+	<div class='page_content'>
+		<div class='myContainer'>
+			{% block page_content_block %}
+			{% placeholder 'page_content' %}
+			{% endblock page_content_block %}
+		</div>
+		<div style='margin:20px auto 0;'>
+			<div id='yelpwidget'></div>
+		</div>
+	</div>
+{% endblock body_block %}
